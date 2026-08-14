@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Kirovograd to Georges Hall — The Snisarenko–Wiszniewski Family History</title>
+<meta name="description" content="A documented family history tracing Vladimir Snisarenko and Yevdokia Gamayunova from Soviet Ukraine through wartime Belgium to Australia, told through original documents spanning 1939–1983.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F0E6;
+    --bg-alt: #EDE7D9;
+    --text: #2B2215;
+    --text-muted: #6B5D4D;
+    --accent: #7B6832;
+    --accent-light: #A8923E;
+    --border: #D1C4AD;
+    --card-bg: #FAF7F0;
+    --doc-bg: #F0EBE0;
+    --doc-border: #8B7339;
+    --timeline-line: #C4B899;
+    --link: #5B6E3E;
+    --link-hover: #7B6832;
+    --ukr-blue: #3A5BA0;
+    --ukr-gold: #C4A835;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 17px;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(43, 34, 21, 0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  nav .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav .nav-inner::-webkit-scrollbar { display: none; }
+  nav a {
+    color: #C4B899;
+    text-decoration: none;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.85rem 0.65rem;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  nav a:hover, nav a:focus { color: #F5F0E6; }
+
+  /* ---- HEADER ---- */
+  header {
+    background: var(--text);
+    color: var(--bg);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  header .eyebrow {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 1.5rem;
+  }
+  header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+  header h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+  header .subtitle {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #A89E8C;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  header .header-line {
+    width: 60px;
+    height: 1px;
+    background: var(--accent-light);
+    margin: 2rem auto 0;
+  }
+
+  /* ---- MAIN ---- */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+    color: var(--text);
+  }
+
+  p { margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  a { color: var(--link); }
+  a:hover { color: var(--link-hover); }
+
+  /* ---- DOCUMENT CARDS ---- */
+  .doc-card {
+    background: var(--doc-bg);
+    border-left: 3px solid var(--doc-border);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .doc-card .doc-title {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .doc-card .cyrillic {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .doc-card .translation {
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  /* ---- NAME TABLE ---- */
+  .name-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  .name-table th {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .name-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .name-table tr:last-child td { border-bottom: none; }
+
+  /* ---- TIMELINE ---- */
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    margin: 2rem 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: var(--timeline-line);
+  }
+  .timeline-entry {
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .timeline-entry:last-child { margin-bottom: 0; }
+  .timeline-entry::before {
+    content: '';
+    position: absolute;
+    left: -2.15rem;
+    top: 0.55rem;
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+  }
+  .timeline-date {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.15rem;
+  }
+  .timeline-text {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ---- PHOTOS ---- */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .photo-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .photo-item img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    background: var(--doc-bg);
+  }
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--doc-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  .photo-caption {
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .photo-caption strong {
+    color: var(--text);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ---- RESEARCH / CALLOUT ---- */
+  .callout {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+  }
+  .callout h3 {
+    margin-top: 0;
+    font-size: 1.05rem;
+  }
+  .callout ul {
+    margin: 0.75rem 0 0 1.25rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  .callout li { margin-bottom: 0.5rem; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--text);
+    color: #A89E8C;
+    padding: 3rem 2rem;
+    text-align: center;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--bg); font-weight: 600; }
+  footer a { color: var(--accent-light); }
+
+  /* ---- CYRILLIC HIGHLIGHT ---- */
+  .cyr {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 600px) {
+    header { padding: 3.5rem 1.5rem 3rem; }
+    main { padding: 0 1.25rem; }
+    section { padding: 2.5rem 0; }
+    .doc-card { padding: 1.25rem; }
+    nav a { font-size: 0.72rem; padding: 0.75rem 0.5rem; }
+  }
+
+  /* ---- HERO CENTREPIECE ---- */
+  .hero-centrepiece {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 2rem;
+    text-align: center;
+  }
+  .hero-photo-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: start;
+  }
+  .hero-photo-pair img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+  .hero-photo-label {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+  .hero-hook {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text);
+  }
+  .hero-hook .reveal-name {
+    display: block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    color: var(--text);
+  }
+  .hero-inscription {
+    max-width: 540px;
+    margin: 1.5rem auto 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .hero-photo-pair {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-centrepiece { padding: 2.5rem 1.25rem 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#origins">Origins</a>
+    <a href="#wartime">Wartime</a>
+    <a href="#partisans">Partisans</a>
+    <a href="#belgium">Belgium</a>
+    <a href="#australia">Australia</a>
+    <a href="#documents">Documents</a>
+    <a href="#names">Names</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#photographs">Photographs</a>
+    <a href="#research">Open Questions</a>
+  </div>
+</nav>
+
+<header>
+  <div class="eyebrow">A Family Between Identities — Ukraine, Germany, Belgium and Australia</div>
+  <h1>From Kirovograd <em>to</em> Georges Hall</h1>
+  <p class="subtitle"><em>The hidden lives of Vladimir Snisarenko and Yevdokia Matveevna Gamayunova</em></p>
+  <div class="header-line"></div>
+</header>
+
+<div class="hero-centrepiece">
+  <div class="hero-photo-pair">
+    <div>
+      <img src="Photo-001.jpg" alt="Portrait of Yevdokia Gamayunova — smiling, hand under chin, polka-dot blouse">
+      <div class="hero-photo-label">Front</div>
+    </div>
+    <div>
+      <img src="Photo-001_rear.jpg" alt="Reverse of photograph, showing handwritten Russian inscription">
+      <div class="hero-photo-label">Reverse — handwritten inscription in Russian</div>
+    </div>
+  </div>
+  <div class="hero-hook">
+    She was known in Australia as Stefa Wiszniewski.<br>
+    But on the back of this photograph, she signed her true name:
+    <span class="reveal-name">Yevdokia Matveevna Gamayunova</span>
+  </div>
+  <p class="hero-inscription"><em>"In remembrance, to my husband Vladimir Snisarenko, from his wife Yevdokia Matveevna Gamayunova. Keep my photograph as you cherished and loved me. A loving kiss."</em></p>
+</div>
+
+<main>
+
+  <!-- ============ INTRODUCTION ============ -->
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <p>This site preserves the story of one family's passage through the upheavals of the twentieth century — from Soviet Ukraine through forced labour in wartime Germany, partisan resistance in Belgium, the quiet construction of entirely new identities, and emigration to Australia. It is told primarily through a rare collection of original documents spanning the late 1930s to the early 1980s, held by the family and transcribed here for the first time.</p>
+    <p>The grandparents at the centre of this story were born as <strong>Vladimir Snisarenko</strong> <span class="cyr">(Владимир Снисаренко)</span> and <strong>Yevdokia Matveevna Gamayunova</strong> <span class="cyr">(Евдокия Матвеевна Гамаюнова)</span> in the Kirovograd region of Ukraine. By the end of the war, they had become <strong>Victor and Stefa Wychenewsky</strong>, Polish-born Greek Catholics from Krakow. They would eventually settle in the Sydney suburb of Georges Hall as the <strong>Wiszniewski</strong> family.</p>
+    <p>No single document bridges these two identities — that was the point. The link rests on family testimony and on private photographs inscribed in Russian with their original names, kept hidden throughout their lives. Together, the public documents and private inscriptions form an unusually complete record of wartime identity reinvention.</p>
+  </section>
+
+  <!-- ============ ORIGINS ============ -->
+  <section id="origins">
+    <h2>Kirovograd: The World Before</h2>
+    <p>Yevdokia Matveevna Gamayunova was born on or around 14 February 1921 in the Kirovograd region of Soviet Ukraine. Her mother was <strong>Darya Andreevna Gamayunova</strong> <span class="cyr">(Гамаюнова Дарья Андреевна)</span>, born 18 March 1898, who would live until 19 December 1983. A gravestone in Kirovograd, bearing the dedication <span class="cyr">"от дочери и сестры"</span> — "from daughter and sister" — confirms the maternal connection and hints at a still-unidentified sister on Darya's side of the family.</p>
+    <p>A 1960 studio portrait of Darya bears the caption <span class="cyr">"Дом отдыха 'Красная звезда' г. Кировоград 1960 г."</span> — the "Krasnaya Zvezda" rest home in Kirovograd — placing her there late into life and confirming the family's deep roots in the city.</p>
+    <p>Of Vladimir Snisarenko's origins, less is known from the surviving documents. The partisan demobilisation record and commendation letter describe him as Russian. He appears to have been older than Yevdokia, possibly born around 1916 based on the dates used in his later cover identity.</p>
+    <p>The earliest document in the collection is Yevdokia's Soviet passport, issued in February 1939 — the last snapshot of a life that was about to be swept away.</p>
+
+    <div class="doc-card">
+      <div class="doc-title">Soviet Passport — ОП № 595356</div>
+      <p>Issued 18 February 1939 by the 3rd Department, RK Militia, Kirovograd. This internal passport identifies the holder by patronymic and family name consistent with Gamayunova. The birth certificate number is tentatively read as 197486. It is the only surviving Soviet-era identity document in the collection.</p>
+    </div>
+  </section>
+
+  <!-- ============ WARTIME ============ -->
+  <section id="wartime">
+    <h2>Wartime: Forced Labour and Displacement</h2>
+    <p>By 1942, Yevdokia was in German-occupied territory, registered under what appears to be an assumed or assigned identity. A wartime labour register — the type now held by the Arolsen Archives — records her as entry #69:</p>
+
+    <div class="doc-card">
+      <div class="doc-title">1942 German Labour Register — Entry #69</div>
+      <p><strong>Name:</strong> Hermaniuk, Stefanie<br>
+      <strong>Occupation:</strong> Arbeiterin (worker)<br>
+      <strong>Born:</strong> 14.2.22<br>
+      <strong>Birthplace:</strong> Rudniki<br>
+      <strong>Marital status:</strong> Ledig (single)<br>
+      <strong>Religion:</strong> Catholic<br>
+      <strong>Nationality:</strong> Ukr.</p>
+      <p class="translation">The birth day (14 February) matches Yevdokia's known birthday. The year 1922 is one year later than the working assumption of 1921 — a common discrepancy in wartime documents. "Hermaniuk" is a cover surname, not a family name; "Rudniki" a cover birthplace. The entry marks the earliest appearance of the identity she would carry into Belgium.</p>
+    </div>
+
+    <p>How and when she and Vladimir were separated from Soviet territory, whether through capture, forced labour deportation, or flight, remains undocumented. What is clear is that by the summer of 1944, Vladimir was in the Verviers region of eastern Belgium.</p>
+  </section>
+
+  <!-- ============ PARTISANS ============ -->
+  <section id="partisans">
+    <h2>The Partisans: Front de l'Indépendance</h2>
+    <p>Vladimir Snisarenko enlisted in the Belgian resistance in the early days of August 1944, joining <strong>Corps O/14</strong> of the <strong>Armée Belge des Partisans</strong>, based in Verviers, under the umbrella of the <strong>Front de l'Indépendance</strong>. A group commendation letter confirms he was one of nine men who enlisted together, all assessed as having conduct <span class="cyr">"toujours parfaite"</span> — always perfect.</p>
+    <p>He rose to a leadership role. The reverse of a group photograph, taken at a Verviers studio, is inscribed in Russian: <span class="cyr">"Группа Русских Партизан Под Командою Снисаренко Владимира"</span> — "A group of Russian partisans under the command of Snisarenko Vladimir." The photograph shows eleven men, several in berets, at least one wearing an armband reading "L'INDEP..." — consistent with the Front de l'Indépendance.</p>
+
+    <div class="photo-item" style="max-width:640px; margin:1.5rem auto;">
+      <img src="Photo-007.jpg" alt="Group photograph of eleven partisan fighters, several wearing berets and Front de l'Indépendance armbands, taken at a Verviers studio" style="aspect-ratio:auto;">
+      <div class="photo-caption">
+        <strong>Russian partisans under the command of Snisarenko Vladimir, Verviers</strong>
+        Studio: Ch. Farmentier, 126 Rue de Dison, Verviers. Several men wear armbands reading "L'INDEP..." — the Front de l'Indépendance.
+      </div>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-title">Partisan Demobilisation Card</div>
+      <p><strong>Armée Belge des Partisans, Corps O/14, Verviers</strong><br>
+      <strong>Name:</strong> Snisorenko Wladimir<br>
+      <strong>Demobilised:</strong> 11 November 1944<br>
+      <strong>Conduct:</strong> Très bonne (very good)<br>
+      Signed by the Commandant adjoint du Corps. Photograph of a young man affixed.</p>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-title">US Army Reference Letter — 19 May 1945</div>
+      <p>Written by Lt. George R. Hanson, 492nd Reinforcement Company, APO #131. Names <strong>"Vladimir Snisarnko"</strong> as a Russian soldier who had been with the unit since 18 April 1945 and was being released to return to Belgium. The letter notes he had hoped to return to Russia but did not — consistent with his decision to remain in the West and rebuild his life under a new identity.</p>
+    </div>
+  </section>
+
+  <!-- ============ BELGIUM ============ -->
+  <section id="belgium">
+    <h2>Belgium: A New Identity</h2>
+    <p>After the war, Vladimir and Yevdokia faced a choice shared by thousands of displaced Soviet citizens: return to the USSR, where former POWs and forced labourers faced suspicion and worse, or stay in the West and start over. They chose to stay — and to become other people.</p>
+    <p>Vladimir became <strong>Victor Wychenewsky</strong>, born 6 May 1916 in Krakow, nationality Polish. Yevdokia became <strong>Stefa Hermaniuk</strong>, born 4 February 1922 in Krakow, also Polish. The constructed identities were internally consistent: Polish-born Greek Catholics with Ukrainian roots, a plausible and unexceptional background in postwar Belgium.</p>
+    <p>They married officially on 25 May 1946 in the commune of Xhendelesse in the province of Liège, in a civil ceremony followed by a Greek Catholic religious ceremony officiated by l'Abbé Jean Tetierz. Their son, <strong>Georges Yvan Vladimir</strong>, was born in Liège on 15 June 1946 — his middle name "Vladimir" quietly honouring his father's true name. Georges was baptised on 20 June 1946 and confirmed on 7 January 1947, both in the Greek Catholic rite.</p>
+
+    <div class="doc-card">
+      <div class="doc-title">Livret de Mariage — Xhendelesse, 25 May 1946</div>
+      <p>Civil marriage record of Victor Wychenensky and Stefa Hermaniuk. Lists the groom's father as "Wychenensky Peter" — a detail that would later conflict with a 1948 certificate naming the father as "Jefrin," an unresolved discrepancy within the constructed identity.</p>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-title">Certificat d'identité, de civisme — Mélen, 24 February 1948</div>
+      <p><strong>Name:</strong> Victor Wychenewsky<br>
+      <strong>Occupation:</strong> Mineur (miner)<br>
+      <strong>Identity card:</strong> No. 285<br>
+      <strong>Born:</strong> Krakow, 5 May 1916<br>
+      <strong>Nationality:</strong> Polonaise<br>
+      <strong>Resident in Mélen since:</strong> 27 May 1947 (previously in Xhendelesse)</p>
+      <p class="translation">Victor worked as a coal miner in the Liège basin. His signature on this document reads approximately "Wysnesky" — a transitional spelling between the Belgian cover name and the eventual Australian surname Wiszniewski.</p>
+    </div>
+
+    <p>This was understood by the family to be their second, official wedding — not their first. A private photograph inscription in which Yevdokia addresses Vladimir as <span class="cyr">"мужу"</span> (husband) and signs as <span class="cyr">"жены"</span> (wife), using their original names, suggests they considered themselves already married before the Belgian ceremony. Whether a prior registered marriage took place in the Soviet Union has not been established.</p>
+  </section>
+
+  <!-- ============ AUSTRALIA ============ -->
+  <section id="australia">
+    <h2>Australia: The Wiszniewski Family</h2>
+    <p>The family emigrated from Belgium to Australia, eventually settling in <strong>Georges Hall</strong>, a suburb in south-western Sydney, New South Wales. At some point during or after the migration, the surname underwent its final transformation: from Wychenewsky/Wychenensky through transitional forms to <strong>Wiszniewski</strong>.</p>
+    <p>Australian migration records for the family have not yet been investigated and remain an open research thread.</p>
+    <p>The private life of the family continued in Russian. The photograph inscriptions, the pet names — Georges was called <span class="cyr">"Гришенька"</span> (Grishenka) within the family, and Yevdokia was <span class="cyr">"Дусенька"</span> (Dusen'ka) — and the dedications were all written in a language the public identities did not speak. The original names survived in private, even as the public world knew only the Wiszniewskis.</p>
+    <p>Darya Andreevna Gamayunova, Yevdokia's mother, died on 19 December 1983 in Kirovograd, apparently never having left the Soviet Union. Her gravestone dedication — "from daughter and sister" — confirms that the family tie endured across decades and borders, even if reunion proved impossible.</p>
+  </section>
+
+  <!-- ============ DOCUMENTS ============ -->
+  <section id="documents">
+    <h2>The Documentary Record</h2>
+    <p>The strength of this family's story lies in the unusual completeness of its paper trail. The collection spans three countries, four decades, two alphabets, and two complete identity sets. Below are the key inscriptions from the private photographs — the documents that bind the public record to the private truth.</p>
+
+    <div class="doc-card">
+      <div class="doc-title">Photo-001 — Inscription (reverse)</div>
+      <p class="cyrillic">"На память моему мужу Снисаренко Владимиру от жены Гамаюновой Евдокии Матвеевны. Береги моё фото, как берёг и любил меня. Крепкий поцелуй."</p>
+      <p class="translation">"In remembrance, to my husband Vladimir Snisarenko, from his wife Yevdokia Matveevna Gamayunova. Keep my photograph as you cherished and loved me. A loving kiss."</p>
+      <p class="translation">This single inscription names both grandparents under their original, pre-Wiszniewski identities, in Yevdokia's hand.</p>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-title">Photo-002 — Inscription (reverse)</div>
+      <p class="cyrillic">"Гришеньке на память. Это твоя мама, когда ей было 19 лет."</p>
+      <p class="translation">"For Grishenka, as a keepsake. This is your mama when she was 19 years old."</p>
+      <p class="translation">If the subject is Yevdokia (born c. 1921), the portrait dates to approximately 1940, before her wartime displacement. "Grishenka" is the family's private diminutive for their son Georges.</p>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-title">Photo-007 — Partisan Group Photograph (reverse)</div>
+      <p class="cyrillic">"Группа Русских Партизан Под Командою [Лейтенанта?] Снисаренко Владимира"</p>
+      <p class="translation">"A group of Russian partisans under the command of [Lieutenant?] Snisarenko Vladimir."</p>
+      <p class="translation">Studio stamp on front: "PHOTO CH. FARMENTIER, 126 Rue de Dison, VERVIERS" — placing production in Verviers, consistent with the Corps O/14 base.</p>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-title">Third Photograph Inscription (tentative transcription)</div>
+      <p class="cyrillic">"На память, на долгие годы, моим дорогим — Дусенька, Владимир, и [сынишке?] Гришенька! 26 [июня?] 1948. Без слов — от сердца."</p>
+      <p class="translation">"In remembrance, for the years to come, to my beloved ones — Dusen'ka, Vladimir, and little son(?) Grishenka! 26 June(?) 1948. Without words — from the heart."</p>
+      <p class="translation">This inscription addresses all three family members by their genuine private names in 1948. The writer must be someone outside the household who knew their real identities — a fellow émigré, comrade, or relative. A higher-resolution photograph is needed to confirm the reading and identify the writer.</p>
+    </div>
+  </section>
+
+  <!-- ============ NAME VARIANTS ============ -->
+  <section id="names">
+    <h2>Name Variants Across Documents</h2>
+    <p>The grandfather's surname appears in three genuinely distinct spellings across independent original documents. These are authentic variants produced by different scribes in different languages, not transcription errors — all must remain active in any archive search.</p>
+
+    <table class="name-table">
+      <thead>
+        <tr>
+          <th>Identity Layer</th>
+          <th>Grandfather</th>
+          <th>Grandmother</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Original (Cyrillic)</td>
+          <td>Снисаренко Владимир</td>
+          <td>Гамаюнова Евдокия Матвеевна</td>
+          <td>Photo inscriptions</td>
+        </tr>
+        <tr>
+          <td>Original (Latin — variant 1)</td>
+          <td>Snisarenko Vladimir</td>
+          <td>—</td>
+          <td>Photo-007 inscription</td>
+        </tr>
+        <tr>
+          <td>Original (Latin — variant 2)</td>
+          <td>Snisorenko Wladimir</td>
+          <td>—</td>
+          <td>Demobilisation card, FI letter</td>
+        </tr>
+        <tr>
+          <td>Original (Latin — variant 3)</td>
+          <td>Snisarnko Vladimir</td>
+          <td>—</td>
+          <td>US Army letter</td>
+        </tr>
+        <tr>
+          <td>Belgian cover</td>
+          <td>Wychenewsky / Wychenensky Victor</td>
+          <td>Hermaniuk Stefa / Stefanie</td>
+          <td>Marriage booklet, Mélen certificate</td>
+        </tr>
+        <tr>
+          <td>Transitional signature</td>
+          <td>Wysnesky</td>
+          <td>—</td>
+          <td>1948 Mélen certificate</td>
+        </tr>
+        <tr>
+          <td>Australian (final)</td>
+          <td colspan="2">Wiszniewski</td>
+          <td>Australian records</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section id="timeline">
+    <h2>Chronological Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <div class="timeline-date">18 March 1898</div>
+        <div class="timeline-text">Darya Andreevna Gamayunova born (Yevdokia's mother).</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">c. 1916</div>
+        <div class="timeline-text">Vladimir Snisarenko born (exact date and place unknown; 1916 used in cover identity).</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">14 February 1921</div>
+        <div class="timeline-text">Yevdokia Matveevna Gamayunova born, Kirovograd region (working assumption).</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">18 February 1939</div>
+        <div class="timeline-text">Soviet internal passport ОП № 595356 issued to Yevdokia, Kirovograd.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">c. 1940</div>
+        <div class="timeline-text">Portrait photograph of Yevdokia "when she was 19 years old" (Photo-002).</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">October 1942</div>
+        <div class="timeline-text">Yevdokia registered in German wartime labour ledger as "Hermaniuk Stefanie," entry #69.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">Early August 1944</div>
+        <div class="timeline-text">Vladimir Snisarenko enlists in the Belgian partisans, Corps O/14 (FI), Verviers. One of nine men enlisted together.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">11 November 1944</div>
+        <div class="timeline-text">Vladimir demobilised from the partisans. Conduct: "très bonne."</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">18 April – 19 May 1945</div>
+        <div class="timeline-text">Vladimir serves with the US Army's 492nd Reinforcement Company. Released with a reference letter from Lt. Hanson.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">25 May 1946</div>
+        <div class="timeline-text">Civil and religious marriage of "Victor Wychenensky" and "Stefa Hermaniuk" at Xhendelesse, province of Liège. Greek Catholic rite.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">15 June 1946</div>
+        <div class="timeline-text">Son Georges Yvan Vladimir born in Liège.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">20 June 1946</div>
+        <div class="timeline-text">Georges baptised, Greek Catholic rite.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">7 January 1947</div>
+        <div class="timeline-text">Georges confirmed, Greek Catholic rite.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">27 May 1947</div>
+        <div class="timeline-text">Family moves from Xhendelesse to Mélen.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">24 February 1948</div>
+        <div class="timeline-text">Certificat d'identité issued at Mélen. Victor listed as miner, Polish nationality.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">c. 26 June 1948</div>
+        <div class="timeline-text">Third photograph inscription: an outsider addresses the family as "Dusen'ka, Vladimir, and Grishenka" — all three by their real private names.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">1960</div>
+        <div class="timeline-text">Studio portrait of Darya Andreevna at the "Krasnaya Zvezda" rest home, Kirovograd.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">Date unknown</div>
+        <div class="timeline-text">Family emigrates from Belgium to Australia. Surname becomes Wiszniewski. They settle in Georges Hall, NSW.</div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-date">19 December 1983</div>
+        <div class="timeline-text">Darya Andreevna Gamayunova dies in Kirovograd, aged 85. Gravestone: "from daughter and sister."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PHOTOGRAPHS ============ -->
+  <section id="photographs">
+    <h2>Photographs</h2>
+    <p>The family photograph collection includes pre-war portraits, wartime partisan group images, and private inscriptions that serve as the only bridge between the original and constructed identities.</p>
+
+    <div class="photo-grid">
+      <div class="photo-item">
+        <!--
+          TO ADD AN IMAGE: Place your image file (e.g. photo-001.jpg) in the
+          same folder as this HTML file, then replace the <div class="photo-placeholder">
+          block below with: <img src="photo-001.jpg" alt="Portrait of Yevdokia Gamayunova">
+        -->
+        <div class="photo-placeholder">Photo-001<br><em>Place image file here</em></div>
+        <div class="photo-caption">
+          <strong>Yevdokia Gamayunova</strong>
+          Smiling, seated, hand under chin, polka-dot blouse. Reverse inscribed to "my husband Vladimir Snisarenko" in her hand.
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">Photo-002<br><em>Place image file here</em></div>
+        <div class="photo-caption">
+          <strong>Yevdokia at age 19 (c. 1940)</strong>
+          Curly dark hair, patterned shawl or cardigan, wristwatch, arms crossed on table edge. Inscribed: "For Grishenka, as a keepsake."
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">Photo-007<br><em>Place image file here</em></div>
+        <div class="photo-caption">
+          <strong>Partisan group, Verviers</strong>
+          Eleven men, several in berets, armband reading "L'INDEP..." Reverse: "Russian partisans under the command of Snisarenko Vladimir."
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">Great-grandmother<br><em>Place image file here</em></div>
+        <div class="photo-caption">
+          <strong>Darya Andreevna Gamayunova, 1960</strong>
+          Studio portrait, "Krasnaya Zvezda" rest home, Kirovograd.
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">To add photographs: place your image files (JPEG or PNG) in the same folder as this page on GitHub, then edit the HTML to replace each placeholder with an <code>&lt;img&gt;</code> tag. Instructions are in the HTML comments above each placeholder.</p>
+  </section>
+
+  <!-- ============ OPEN RESEARCH ============ -->
+  <section id="research">
+    <h2>Open Research Questions</h2>
+    <p>This history remains a work in progress. Several threads of inquiry are still open, and the family welcomes contact from researchers, archivists, or anyone who recognises a name or a face.</p>
+
+    <div class="callout">
+      <h3>Identity and Origins</h3>
+      <ul>
+        <li>Where and when was Vladimir Snisarenko born? The cover identity uses Krakow, 1916, but this is a fabrication.</li>
+        <li>Was there a registered marriage in the Soviet Union before the 1946 Belgian ceremony?</li>
+        <li>Who is the "sister" named on Darya Andreevna's gravestone? An unidentified maternal-line relative.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <h3>Wartime and Displacement</h3>
+      <ul>
+        <li>How and when did Yevdokia and Vladimir leave Soviet territory — through capture, forced labour deportation, or flight?</li>
+        <li>The FI Corps O/14 commendation letter's date contains a Roman numeral month (II or XI) — the original needs rechecking.</li>
+        <li>Who wrote the third photograph inscription (c. June 1948), addressing the family by their private names? A comrade, relative, or fellow émigré?</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <h3>Archives and Records</h3>
+      <ul>
+        <li>Kirovohrad Oblast State Archive: a request covering fond R-7915 (civil status acts) and fond P-5907 (filtration files) has been submitted. Fond R-7915, Опис 1, Справа 5 has been partially searched without a matching entry.</li>
+        <li>CegeSoma (Belgium): an initial search returned "no file found" — re-searching under all surname variants (Snisarenko, Snisorenko, Snisarnko, Wychenewsky) is planned.</li>
+        <li>Australian migration records remain entirely uninvestigated.</li>
+        <li>The Arolsen Archives should be searched directly (browser-only) under each surname spelling variant.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <h3>Contact</h3>
+      <ul>
+        <li>If you recognise any names, faces, or details in this history, or if you have information about the Snisarenko, Gamayunov, or Wiszniewski families, please get in touch.</li>
+        <!-- Replace with your preferred contact method: -->
+        <li>Contact: <a href="mailto:g.j.wiszniewski@gmail.com">g.j.wiszniewski@gmail.com</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>From Kirovograd to Georges Hall</strong></p>
+  <p>The Snisarenko–Gamayunova–Wiszniewski Family History</p>
+  <p>Researched and compiled by Greg Wiszniewski</p>
+  <p style="margin-top:1rem;">Original documents span 1939–1983. All transcriptions from family-held originals.<br>
+  Site last updated: August 2026.</p>
+</footer>
+
+</body>
+</html>
